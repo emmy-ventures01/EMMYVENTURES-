@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Emmyventures</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#0b141a;color:#e6e6e6;overflow-x:hidden}
+
+/* HEADER */
+header{
+  background:#0f2027;
+  padding:18px 25px;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+}
+.nav-container{display:flex;justify-content:space-between;align-items:center}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{height:48px}
+.logo-text{color:#00c6ff;font-size:1.45rem;font-weight:bold}
+.hamburger{cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.hamburger span{width:25px;height:3px;background:#fff}
+
+/* MENU */
+.dropdown-menu{
+  position:fixed;top:76px;left:0;width:100%;
+  background:#0f2027;max-height:0;overflow:hidden;
+  transition:max-height .35s ease
+}
+.dropdown-menu.active{max-height:350px}
+.dropdown-menu a{
+  display:block;text-align:center;padding:18px;
+  color:#fff;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+
+/* HERO */
+.contact-hero{
+  min-height:45vh;
+  background:
+    linear-gradient(rgba(15,32,39,.9),rgba(15,32,39,.9)),
+    url("https://i.postimg.cc/Bv2GBMpK/photo-1519389950473-47ba0277781c.jpg")
+    center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:140px 20px 60px
+}
+.contact-hero h1{font-size:3rem;margin-bottom:10px}
+.contact-hero p{max-width:720px;opacity:.9}
+
+/* CONTACT */
+.contact-section{padding:100px 20px}
+.contact-container{max-width:1000px;margin:auto}
+.contact-box{
+  background:#0f2027;
+  padding:60px 50px;
+  border-radius:20px;
+}
+
+.contact-intro{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 60px;
+}
+.contact-intro h2{
+  color:#00c6ff;
+  font-size:2.2rem;
+  margin-bottom:14px;
+}
+.contact-intro p{
+  color:#cbd3d8;
+  font-size:.95rem;
+  line-height:1.8;
+}
+
+/* GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+/* WHATSAPP */
+.contact-card{
+  background:#121f26;
+  padding:40px;
+  border-radius:18px;
+}
+.contact-card h3{color:#00c6ff;margin-bottom:12px}
+.contact-card p{font-size:.9rem;line-height:1.7;color:#cbd3d8}
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:13px 28px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+/* FORM */
+form{
+  background:#121f26;
+  padding:40px;
+  border-radius:18px;
+}
+.form-title{
+  color:#00c6ff;
+  margin-bottom:20px;
+  font-size:1.15rem;
+}
+label{font-size:.85rem;opacity:.85}
+input,textarea{
+  width:100%;
+  padding:13px;
+  margin:10px 0 18px;
+  background:#0b141a;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  border-radius:7px;
+}
+textarea{min-height:130px}
+button{
+  padding:13px 30px;
+  background:#00c6ff;
+  border:none;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* SUCCESS */
+.success-message{
+  display:none;
+  margin-top:22px;
+  background:#0b3d2e;
+  border:1px solid #25D366;
+  padding:22px;
+  border-radius:10px;
+  color:#dfffe9;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#0f2027;
+  padding:25px 15px;
+  text-align:center;
+}
+.footer-brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+.footer-brand img{height:30px}
+.footer-brand span{color:#00c6ff;font-weight:bold}
+footer p{font-size:.9rem;opacity:.8}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:.9s}
+.show{opacity:1;transform:none}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Logo">
+      <div class="logo-text">Emmyventures</div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<nav class="dropdown-menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="contact-hero">
+  <div class="reveal">
+    <h1>Contact</h1>
+    <p>Start a conversation and let’s build something impactful together.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-box reveal">
+
+      <div class="contact-intro">
+        <h2>Let’s Work Together</h2>
+        <p>
+          We collaborate with individuals, startups, and businesses to design,
+          develop, and deploy reliable digital solutions.  
+          Reach out and let’s discuss how we can support your next project.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card reveal">
+          <h3>Direct Consultation</h3>
+          <p>
+            For quick discussions, project clarification, or pricing estimates,
+            connect with us directly via WhatsApp.
+          </p>
+          <a class="whatsapp-btn"
+             href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20we%20would%20like%20to%20discuss%20a%20project"
+             target="_blank">
+            Start WhatsApp Conversation
+          </a>
+        </div>
+
+        <form id="contactForm" class="reveal">
+          <div class="form-title">Send a Project Brief</div>
+
+          <label>Full Name</label>
+          <input type="text" name="name" required>
+
+          <label>Email Address</label>
+          <input type="email" name="email" required>
+
+          <label>Project Details</label>
+          <textarea name="message"
+            placeholder="Tell us about your project goals, timeline, and expectations..."
+            required></textarea>
+
+          <button type="submit">Submit Inquiry</button>
+
+          <div class="success-message" id="successMsg">
+            ✅ Thank you for contacting us.<br>
+            Your inquiry has been received and our team will respond shortly.
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Logo">
+    <span>Emmyventures</span>
+  </div>
+  <p>© 2025 Emmyventures. All Rights Reserved.</p>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+
+/* Formspree Custom Submit */
+const form=document.getElementById("contactForm");
+const success=document.getElementById("successMsg");
+
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  fetch("https://formspree.io/f/mbdrrgvy",{
+    method:"POST",
+    body:new FormData(form),
+    headers:{'Accept':'application/json'}
+  }).then(res=>{
+    if(res.ok){
+      success.style.display="block";
+      form.reset();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
