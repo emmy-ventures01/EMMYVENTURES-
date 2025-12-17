@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmyventures | Designer & Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: #333;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #0f2027;
+      padding: 18px 25px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-area img {
+      height: 48px;
+      width: auto;
+    }
+
+    .logo-text {
+      color: #00c6ff;
+      font-size: 1.45rem;
+      font-weight: bold;
+    }
+
+    /* ===== HAMBURGER ===== */
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+
+    /* ===== TOP DROPDOWN MENU ===== */
+    .dropdown-menu {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      background: #0f2027;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      z-index: 999;
+    }
+
+    .dropdown-menu.active {
+      max-height: 350px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      text-align: center;
+      padding: 18px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 1.05rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(15,32,39,0.82), rgba(15,32,39,0.82)),
+        url("https://i.postimg.cc/Bv2GBMpK/photo-1519389950473-47ba0277781c.jpg")
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 140px 20px 40px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero-title {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      opacity: 0.95;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 35px;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      padding: 13px 32px;
+      background: #00c6ff;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+      background: #00b2e6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0f2027;
+      color: #fff;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand img {
+      height: 30px;
+      width: auto;
+    }
+
+    .footer-brand span {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #00c6ff;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Emmyventures Logo">
+        <div class="logo-text">Emmyventures</div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU -->
+  <nav class="dropdown-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Building Thoughtful<br>
+        Digital Experiences
+      </h1>
+
+      <p class="hero-title">
+        Emmyventures — Designer • Developer • Deployer
+      </p>
+
+      <p class="hero-subtitle">
+        I create well-designed, scalable, and reliable digital solutions
+        for individuals, startups, and growing brands.
+      </p>
+
+      <a href="portfolio.html" class="hero-btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Emmyventures Logo">
+      <span>Emmyventures</span>
+    </div>
+    <p>© 2025 Emmyventures. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    }
+  </script>
+
+</body>
+  </html>
