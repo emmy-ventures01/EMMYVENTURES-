@@ -6,36 +6,58 @@
 <title>Services | Emmyventures</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#0b141a;color:#e6e6e6;overflow-x:hidden}
 
 /* HEADER */
 header{
   background:#0f2027;
   padding:18px 25px;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:1000;
 }
-.nav-container{display:flex;justify-content:space-between;align-items:center;}
-.logo-area{display:flex;align-items:center;gap:12px;}
-.logo-area img{height:48px;}
-.logo-text{color:#00c6ff;font-size:1.45rem;font-weight:bold;}
-.hamburger{cursor:pointer;display:flex;flex-direction:column;gap:5px;}
-.hamburger span{width:25px;height:3px;background:#fff}
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-area img{height:48px}
+.logo-text{
+  color:#00c6ff;
+  font-size:1.45rem;
+  font-weight:bold;
+}
+.hamburger{
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#fff;
+}
 
-/* MENU */
+/* DROPDOWN MENU (PUSHES CONTENT) */
 .dropdown-menu{
-  position:fixed;top:76px;left:0;width:100%;
-  background:#0f2027;max-height:0;overflow:hidden;
+  width:100%;
+  background:#0f2027;
+  max-height:0;
+  overflow:hidden;
   transition:max-height .35s ease;
 }
-.dropdown-menu.active{max-height:350px;}
+.dropdown-menu.active{max-height:500px}
 .dropdown-menu a{
-  display:block;text-align:center;padding:18px;
-  color:#fff;text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,.08)
+  display:block;
+  text-align:center;
+  padding:18px;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 /* HERO */
@@ -45,73 +67,101 @@ header{
     linear-gradient(rgba(15,32,39,.9),rgba(15,32,39,.9)),
     url("https://i.postimg.cc/Bv2GBMpK/photo-1519389950473-47ba0277781c.jpg")
     center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:140px 20px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
 }
-.services-hero h1{font-size:3rem;margin-bottom:10px;}
+.services-hero h1{font-size:3rem;margin-bottom:10px}
 .services-hero p{max-width:720px;opacity:.9}
 
-/* INTRO MESSAGE */
+/* SERVICES */
+.services-section{padding:100px 20px}
+.services-container{max-width:1100px;margin:auto}
+
 .services-intro{
-  padding:80px 20px 40px;
-}
-.intro-box{
-  max-width:900px;
-  margin:auto;
-  background:#0f2027;
-  padding:40px;
-  border-radius:16px;
   text-align:center;
+  max-width:720px;
+  margin:0 auto 60px;
 }
-.intro-box h2{
+.services-intro h2{
   color:#00c6ff;
-  margin-bottom:15px;
-  font-size:1.9rem;
+  font-size:2.2rem;
+  margin-bottom:14px;
 }
-.intro-box p{
-  line-height:1.7;
-  font-size:.95rem;
+.services-intro p{
   color:#cbd3d8;
+  line-height:1.8;
+  font-size:.95rem;
 }
 
-/* SERVICES */
-.services-section{padding:60px 20px 100px;}
-.services-container{max-width:1100px;margin:auto;}
 .services-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:35px;
 }
+
 .service-card{
   background:#121f26;
-  padding:35px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.05);
+  padding:40px;
+  border-radius:18px;
 }
-.service-card h3{color:#00c6ff;margin-bottom:8px;}
-.service-card p{font-size:.95rem;line-height:1.6;color:#cbd3d8;}
-.price{margin:12px 0;font-weight:bold;}
-.price span{display:block;font-size:.85rem;opacity:.8;font-weight:normal}
+.service-card h3{
+  color:#00c6ff;
+  margin-bottom:10px;
+}
+.service-card p{
+  font-size:.9rem;
+  line-height:1.7;
+  color:#cbd3d8;
+}
 
-/* BUTTON */
-.pay-btn{
-  display:inline-block;margin-top:15px;
-  padding:12px 22px;
-  background:#25D366;color:#fff;
-  text-decoration:none;border-radius:8px;
-  font-size:.9rem;font-weight:bold;
+.service-meta{
+  margin-top:18px;
+  font-size:.85rem;
+  opacity:.85;
+}
+
+.service-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:12px 26px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+  font-size:.9rem;
 }
 
 /* FOOTER */
-footer{background:#0f2027;padding:25px 15px;text-align:center;}
-.footer-brand{display:flex;justify-content:center;align-items:center;gap:10px;}
-.footer-brand img{height:30px;}
-.footer-brand span{color:#00c6ff;font-weight:bold;}
+footer{
+  background:#0f2027;
+  padding:25px 15px;
+  text-align:center;
+}
+.footer-brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.footer-brand img{height:30px}
+.footer-brand span{color:#00c6ff;font-weight:bold}
 footer p{font-size:.9rem;opacity:.8}
 
-/* MOTION */
-.reveal{opacity:0;transform:translateY(40px);transition:all .9s ease;}
-.show{opacity:1;transform:translateY(0);}
+/* ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s;
+}
+.show{
+  opacity:1;
+  transform:none;
+}
 </style>
 </head>
 
@@ -120,7 +170,7 @@ footer p{font-size:.9rem;opacity:.8}
 <header>
   <div class="nav-container">
     <div class="logo-area">
-      <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg">
+      <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Logo">
       <div class="logo-text">Emmyventures</div>
     </div>
     <div class="hamburger" onclick="toggleMenu()">
@@ -133,75 +183,95 @@ footer p{font-size:.9rem;opacity:.8}
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="blog.html">Blog</a>
   <a href="contact.html">Contact</a>
 </nav>
 
 <section class="services-hero">
   <div class="reveal">
-    <h1>Services</h1>
-    <p>Professional digital solutions designed to meet your goals and scale your ideas.</p>
-  </div>
-</section>
-
-<section class="services-intro">
-  <div class="intro-box reveal">
-    <h2>Professional Services, Clear Process</h2>
-    <p>
-      Every project is handled with attention to detail and a focus on results.  
-      Pricing shown below is an estimate to guide you — final cost depends on project scope, features, and timeline.
-      <br><br>
-      To proceed, select a service and contact me directly on WhatsApp.  
-      We’ll discuss your project, confirm requirements, and finalize payment before work begins.
-    </p>
+    <h1>Our Services</h1>
+    <p>Professional digital solutions designed to support growth and scalability.</p>
   </div>
 </section>
 
 <section class="services-section">
-<div class="services-container">
-<div class="services-grid">
+  <div class="services-container">
 
-<div class="service-card reveal">
-<h3>Graphic Design</h3>
-<p>Logos, flyers, and creative visual designs.</p>
-<div class="price">Starting from $15 <span>≈ ₦20,000+</span></div>
-<a class="pay-btn" href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20I%20want%20to%20pay%20for%20Graphic%20Design" target="_blank">Proceed via WhatsApp</a>
-</div>
+    <div class="services-intro reveal">
+      <h2>What We Do</h2>
+      <p>
+        We provide end-to-end digital services — from design and development
+        to deployment and long-term support.
+      </p>
+    </div>
 
-<div class="service-card reveal">
-<h3>Web Design</h3>
-<p>Modern, responsive, and user-friendly website designs.</p>
-<div class="price">From $50 <span>≈ ₦75,000+</span></div>
-<a class="pay-btn" href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20I%20want%20to%20pay%20for%20Web%20Design" target="_blank">Proceed via WhatsApp</a>
-</div>
+    <div class="services-grid">
 
-<div class="service-card reveal">
-<h3>Web Development</h3>
-<p>Frontend & backend development solutions.</p>
-<div class="price">Starting from $120 <span>≈ ₦180,000+</span></div>
-<a class="pay-btn" href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20I%20want%20to%20pay%20for%20Web%20Development" target="_blank">Proceed via WhatsApp</a>
-</div>
+      <div class="service-card reveal">
+        <h3>Graphic Design</h3>
+        <p>
+          Brand visuals, logos, banners, and marketing assets
+          designed to communicate clearly and professionally.
+        </p>
+        <div class="service-meta">Estimated pricing • Based on scope</div>
+        <a class="service-btn"
+           href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20we%20would%20like%20to%20pay%20for%20Graphic%20Design%20services"
+           target="_blank">
+           Proceed via WhatsApp
+        </a>
+      </div>
 
-<div class="service-card reveal">
-<h3>Backend Development</h3>
-<p>APIs, databases, and server-side logic.</p>
-<div class="price">Custom Pricing</div>
-<a class="pay-btn" href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20I%20want%20to%20discuss%20Backend%20Development" target="_blank">Contact via WhatsApp</a>
-</div>
+      <div class="service-card reveal">
+        <h3>Web Design</h3>
+        <p>
+          Modern, responsive interfaces focused on usability,
+          branding, and conversion.
+        </p>
+        <div class="service-meta">Estimated pricing • Based on project needs</div>
+        <a class="service-btn"
+           href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20we%20would%20like%20to%20pay%20for%20Web%20Design%20services"
+           target="_blank">
+           Proceed via WhatsApp
+        </a>
+      </div>
 
-<div class="service-card reveal">
-<h3>Deployment & Hosting</h3>
-<p>Project deployment and hosting setup.</p>
-<div class="price">Starting from $25 <span>≈ ₦40,000+</span></div>
-<a class="pay-btn" href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20I%20want%20to%20pay%20for%20Deployment%20Services" target="_blank">Proceed via WhatsApp</a>
-</div>
+      <div class="service-card reveal">
+        <h3>Web Development</h3>
+        <p>
+          Frontend and backend development using clean,
+          scalable, and maintainable code.
+        </p>
+        <div class="service-meta">Estimated pricing • Based on complexity</div>
+        <a class="service-btn"
+           href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20we%20would%20like%20to%20pay%20for%20Web%20Development%20services"
+           target="_blank">
+           Proceed via WhatsApp
+        </a>
+      </div>
 
-</div>
-</div>
+      <div class="service-card reveal">
+        <h3>Project Deployment</h3>
+        <p>
+          Secure deployment, hosting setup, domain configuration,
+          and performance optimization.
+        </p>
+        <div class="service-meta">Estimated pricing • Depends on infrastructure</div>
+        <a class="service-btn"
+           href="https://wa.me/2347030835378?text=Hello%20Emmyventures,%20we%20would%20like%20to%20pay%20for%20Project%20Deployment%20services"
+           target="_blank">
+           Proceed via WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <footer>
   <div class="footer-brand">
-    <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg">
+    <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg" alt="Logo">
     <span>Emmyventures</span>
   </div>
   <p>© 2025 Emmyventures. All Rights Reserved.</p>
@@ -209,13 +279,14 @@ footer p{font-size:.9rem;opacity:.8}
 
 <script>
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add("show")}
-  })
-},{threshold:.15})
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))
-function toggleMenu(){document.getElementById("menu").classList.toggle("active")}
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
-</html>
+  </html>
