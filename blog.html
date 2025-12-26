@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Emmyventures</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#0b141a;color:#e6e6e6;overflow-x:hidden}
+
+/* HEADER */
+header{background:#0f2027;padding:18px 25px}
+.nav-container{display:flex;justify-content:space-between;align-items:center}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{height:48px}
+.logo-text{color:#00c6ff;font-size:1.45rem;font-weight:bold}
+.hamburger{cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.hamburger span{width:25px;height:3px;background:#fff}
+
+/* MENU */
+.dropdown-menu{
+  width:100%;
+  background:#0f2027;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.dropdown-menu.active{max-height:500px}
+.dropdown-menu a{
+  display:block;
+  text-align:center;
+  padding:18px;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* HERO */
+.blog-hero{
+  min-height:40vh;
+  background:
+    linear-gradient(rgba(15,32,39,.9),rgba(15,32,39,.9)),
+    url("https://i.postimg.cc/Bv2GBMpK/photo-1519389950473-47ba0277781c.jpg")
+    center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+}
+.blog-hero h1{font-size:3rem;margin-bottom:10px}
+.blog-hero p{max-width:720px;opacity:.9}
+
+/* BLOG */
+.blog-section{padding:100px 20px}
+.blog-container{max-width:1100px;margin:auto}
+
+/* ANNOUNCEMENT */
+.announcement{
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  border-radius:22px;
+  padding:50px;
+  margin-bottom:80px;
+}
+.announcement h2{
+  color:#00c6ff;
+  font-size:2.2rem;
+  margin-bottom:15px;
+}
+.announcement p{
+  max-width:850px;
+  line-height:1.9;
+  color:#d3dee4;
+  font-size:.95rem;
+}
+.launch-date{
+  display:flex;
+  gap:15px;
+  align-items:center;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+.launch-badge{
+  padding:12px 26px;
+  background:#1a2a33;
+  border-radius:25px;
+  font-size:.85rem;
+  color:#9fb3bd;
+}
+.launch-highlight{
+  padding:12px 26px;
+  background:#00c6ff;
+  color:#0b141a;
+  border-radius:25px;
+  font-size:.85rem;
+  font-weight:bold;
+}
+
+/* INTRO */
+.blog-intro{text-align:center;max-width:720px;margin:0 auto 60px}
+.blog-intro h2{color:#00c6ff;font-size:2.2rem;margin-bottom:14px}
+.blog-intro p{color:#cbd3d8;font-size:.95rem;line-height:1.8}
+
+/* GRID */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
+}
+.blog-card{
+  background:#121f26;
+  padding:35px;
+  border-radius:18px;
+}
+.blog-meta{font-size:.8rem;opacity:.75;margin-bottom:10px}
+.blog-card h3{color:#00c6ff;margin-bottom:12px}
+.blog-card p{font-size:.9rem;line-height:1.7;color:#cbd3d8}
+
+/* READ MORE */
+.read-more{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 18px;
+  border-radius:25px;
+  background:#1a2a33;
+  color:#9fb3bd;
+  font-size:.85rem;
+  cursor:not-allowed;
+}
+
+/* FOOTER */
+footer{background:#0f2027;padding:25px 15px;text-align:center}
+.footer-brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.footer-brand img{height:30px}
+.footer-brand span{color:#00c6ff;font-weight:bold}
+footer p{font-size:.9rem;opacity:.8}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:.9s}
+.show{opacity:1;transform:none}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg">
+      <div class="logo-text">Emmyventures</div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<nav class="dropdown-menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="blog-hero">
+  <div class="reveal">
+    <h1>Our Blog</h1>
+    <p>Ideas, insights, product updates, and technology stories from Emmyventures.</p>
+  </div>
+</section>
+
+<section class="blog-section">
+<div class="blog-container">
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement reveal">
+    <h2>✍️Official Announcement — Thinkers App</h2>
+    <p>
+      We are excited to announce the development of our first official product,
+      <strong>Thinkers</strong> — an app designed to empower thinkers, creators,
+      and problem-solvers to share ideas, collaborate, and grow intellectually.
+      Thinkers will be officially launched under Emmyventures as part of our
+      long-term vision in product innovation.
+    </p>
+    <div class="launch-date">
+      <div class="launch-badge">Product Launch</div>
+      <div class="launch-highlight">January 25th</div>
+    </div>
+  </div>
+
+  <div class="blog-intro reveal">
+    <h2>Latest Articles</h2>
+    <p>
+      Explore articles covering design, development, deployment,
+      and our journey building digital products.
+    </p>
+  </div>
+
+  <div class="blog-grid">
+
+    <div class="blog-card reveal">
+      <div class="blog-meta">Product • Thinkers</div>
+      <h3>Why We’re Building the Thinkers App</h3>
+      <p>
+        A deep dive into the vision behind Thinkers, the problems it solves,
+        and why idea-sharing matters in today’s digital world.
+      </p>
+      <span class="read-more">Article coming soon</span>
+    </div>
+
+    <div class="blog-card reveal">
+      <div class="blog-meta">Design</div>
+      <h3>How Design Shapes User Behavior</h3>
+      <p>
+        Understanding how layout, colors, and motion influence how users
+        interact with websites and applications.
+      </p>
+      <span class="read-more">Article coming soon</span>
+    </div>
+
+    <div class="blog-card reveal">
+      <div class="blog-meta">Development</div>
+      <h3>Frontend vs Backend: What Clients Should Know</h3>
+      <p>
+        Breaking down the differences and why both are critical
+        for scalable, secure applications.
+      </p>
+      <span class="read-more">Article coming soon</span>
+    </div>
+
+    <div class="blog-card reveal">
+      <div class="blog-meta">Deployment</div>
+      <h3>What Really Happens After Deployment</h3>
+      <p>
+        From hosting to maintenance, learn what keeps a website
+        running smoothly after launch.
+      </p>
+      <span class="read-more">Article coming soon</span>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="https://i.postimg.cc/Ss22N0fR/IMG-20251217-WA0263.jpg">
+    <span>Emmyventures</span>
+  </div>
+  <p>© 2025 Emmyventures. All Rights Reserved.</p>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
